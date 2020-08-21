@@ -1,0 +1,43 @@
+{% extends 'common.html' %}
+{%  load static %}
+{% block cygen %}
+
+    {% include 'cygen_menu.html' %}
+
+    <table align="center" border="2">
+    <tr><th>View All Services</th></tr>
+    <tr>
+        <th>ID</th>
+        <th>Name Of Service</th>
+        <th>Description</th>
+
+        <th>Start Date</th>
+        <th>Customers</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    {% for x in data %}
+        <tr>
+        <th>{{ x.no }}</th>
+        <th>{{ x.name }}</th>
+        <th>{{ x.desc }}</th>
+
+        <th>{{ x.Startdate }}</th>
+        <th>{{ x.Customers }}</th>
+        <th>
+            <form action="{% url 'show_update' %}">
+            <input type="hidden" name="s2" value="{{ x.name }}">
+            <button type="submit">Update</button>
+                </form>
+        </th>
+
+            <th>
+                <a href="{% url 'delete_emp' %}"?na="{{ x.name }}"><img src="{% static 'images/interface.png'%}"></a>
+            </th>
+        </tr>
+        </tr>
+    {% endfor %}
+    
+    </table>
+{% endblock %}
+

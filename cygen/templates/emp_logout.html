@@ -1,0 +1,13 @@
+{% extends 'common.html' %}
+{% block cygen %}
+{% include 'mainmenu.html'%}
+    {% load static %}
+
+    <script src="{% static 'js/sample.js' %}"></script>
+
+    <button type="submit" onclick="show()">Clk to Logout</button>
+
+
+
+
+{% endblock %}

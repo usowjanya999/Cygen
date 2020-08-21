@@ -1,0 +1,27 @@
+{% extends 'common.html' %}
+{% block cygen %}
+    {% include 'cygen_menu.html' %}
+
+        <form actio="{%  url 'update_ser' %}" method="post">
+        {% csrf_token %}
+
+    <table align="center" border="2">
+
+
+        {% for x in data1 %}
+
+            <tr><input type="number" name="u1">{{ x.no }} </tr>
+            <tr><input type="text" name="u2" readonly>{{ x.name }} </tr>
+            <tr><input type="text" name="u3">{{ x.desc }} </tr>
+
+            <tr><input type="date" name="u5">{{ x.Startdate }} </tr>
+            <tr><input type="number" name="u6">{{ x.Customers }} </tr>
+
+        {% endfor %}
+            <tr><button type="submit">Update</button> </tr>
+
+
+
+    </table>
+        </form>
+{% endblock %}

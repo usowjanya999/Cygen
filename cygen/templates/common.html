@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+<body>
+<table align="center" border="2">
+    <tr>
+        <th><img src="{% static 'images/logo.png' %}"></th>
+        <th>Cygen Services</th>
+    </tr>
+    <tr>
+        <th colspan="2">
+            {% block cygen %}
+            {% endblock %}
+        </th>
+    </tr>
+    <tr>
+        <th colspan="2">We are here to care for your health</th>
+    </tr>
+</table>
+</body>
+</html>
